@@ -13,7 +13,9 @@ export default class Engineer extends Employee {
 
   // In the rendered HTML file, the Engineer's GitHub username is displayed as a link to their GitHub profile. This is unique to the Engineer class.
   createUniqueLIs() {
-    return `<li> class="list-group-item">GitHub: ${this.#github}</li>`;
+    return `<li class="list-group-item"><a href="https://github.com/${
+      this.#github
+    }">  GitHub: ${this.#github}</a></li>`;
   }
 
   // getRole() is overridden to return 'Engineer'

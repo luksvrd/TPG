@@ -17,18 +17,18 @@ export default class Employee {
     return "Employee";
   }
 
-  // get name() is a getter method that returns the Employee's name
-  getName() {
+  // get name() is a getter method that returns the Employee's name. get name() must be lowercase to avoid conflict with the name property.
+  get name() {
     return this.#name;
   }
 
   // get id() is a getter method that returns the Employee's id
-  getId() {
+  get id() {
     return this.#id;
   }
 
   // get email() is a getter method that returns the Employee's email
-  getEmail() {
+  get email() {
     return this.#email;
   }
 }
