@@ -10,28 +10,28 @@ export default class Team {
         type: "input",
         name: "name",
         message: "What is the team manager's name?",
-        // validate: (answer) => this.#validateName(answer),
-        // default: "John Doe",
+        validate: (answer) => this.#validateName(answer),
+        default: "John Doe",
       },
       {
         type: "input",
         name: "id",
         message: "What is the team manager's id?",
-        // validate: (answer) => this.#validateNumber(answer),
+        validate: (answer) => this.#validateNumber(answer),
       },
       {
         type: "input",
         name: "email",
         message: "What is the team manager's email?",
-        // validate: (answer) => this.#validateEmail(answer),
-        // default: "manager@mg.com",
+        validate: (answer) => this.#validateEmail(answer),
+        default: "manager@mg.com",
       },
       {
         type: "input",
         name: "officeNumber",
         message: "What is the team manager's office number?",
-        // validate: (answer) => this.#validateNumber(answer),
-        // default: "1234567890",
+        validate: (answer) => this.#validateNumber(answer),
+        default: "1234567890",
       },
     ],
     menu: [
@@ -47,28 +47,28 @@ export default class Team {
         type: "input",
         name: "name",
         message: "What is the engineer's name?",
-        // validate: (answer) => this.#validateName(answer),
-        // default: "Jane Doe",
+        validate: (answer) => this.#validateName(answer),
+        default: "Jane Doe",
       },
       {
         type: "input",
         name: "id",
         message: "What is the engineer's id?",
-        // validate: (answer) => {
-        //   const validateIdResults = this.#validateId(answer);
-        //   if (validateIdResults !== true) {
-        //     return validateIdResults;
-        //   }
+        validate: (answer) => {
+          const validateIdResults = this.#validateId(answer);
+          if (validateIdResults !== true) {
+            return validateIdResults;
+          }
 
-        //   return this.#validateNumber(answer);
-        // },
+          return this.#validateNumber(answer);
+        },
       },
       {
         type: "input",
         name: "email",
         message: "What is the engineer's email?",
-        // validate: (answer) => this.#validateEmail(answer),
-        // default: "a@a.com",
+        validate: (answer) => this.#validateEmail(answer),
+        default: "a@a.com",
       },
       {
         type: "input",
@@ -81,35 +81,35 @@ export default class Team {
         type: "input",
         name: "name",
         message: "What is the intern's name?",
-        // validate: (answer) => this.#validateName(answer),
-        // default: "Jane Doe",
+        validate: (answer) => this.#validateName(answer),
+        default: "Jane Doe",
       },
       {
         type: "input",
         name: "id",
         message: "What is the intern's id?",
-        // validate: (answer) => {
-        //   const validateIdResults = this.#validateId(answer);
-        //   if (validateIdResults !== true) {
-        //     return validateIdResults;
-        //   }
+        validate: (answer) => {
+          const validateIdResults = this.#validateId(answer);
+          if (validateIdResults !== true) {
+            return validateIdResults;
+          }
 
-        //   return this.#validateNumber(answer);
-        // },
+          return this.#validateNumber(answer);
+        },
       },
       {
         type: "input",
         name: "email",
         message: "What is the intern's email?",
-        // validate: (answer) => this.#validateEmail(answer),
-        // default: "a@a.com",
+        validate: (answer) => this.#validateEmail(answer),
+        default: "a@a.com",
       },
       {
         type: "input",
         name: "school",
         message: "What is the intern's school?",
-        // validate: (answer) => this.#validateSchool(answer),
-        // default: "University",
+        validate: (answer) => this.#validateSchool(answer),
+        default: "University",
       },
     ],
   };
@@ -145,32 +145,37 @@ export default class Team {
     this.#members.push(new Intern(internAnswers));
   }
 
-  // #validateEmail(email) {
-  //   return (
-  //     Boolean(email.match(/\S+@\S+\.\S+/)) ||
-  //     "Please enter a valid email address."
-  //   );
-  // }
+  #validateEmail(email) {
+    return (
+      Boolean(email.match(/\S+@\S+\.\S+/)) ||
+      "Please enter a valid email address."
+    );
+  }
 
-  // #validateId(id) {
-  //   return (
-  //     this.#member.every((member) => member.id !== id) ||
-  //     "This ID is already in use. Please enter a unique ID."
-  //   );
-  // }
+  #validateId(id) {
+    return (
+      this.#members.every((member) => member.id !== id) ||
+      "This ID is already in use. Please enter a unique ID."
+    );
+  }
 
-  // #validateName(name) {
-  //   return name !== "" || "Please enter a name.";
-  // }
+  #validateName(name) {
+    return name !== "" || "Please enter a name.";
+  }
 
-  // #validateNumber(number) {
-  //   return (
-  //     Boolean(number.match(/^[1-9]\d*$/)) ||
-  //     "Please enter a positive number greater than zero."
-  //   );
+  #validateSchool(school) {
+    return school !== "" || "Please enter a school.";
+  }
+
+  #validateNumber(number) {
+    return (
+      Boolean(number.match(/^[1-9]\d*$/)) ||
+      "Please enter a positive number greater than zero."
+    );
+  }
 
   // this get method returns the value of the private field #members allowing us to access the value of the private field outside of the class.
-  get members() {
+  get member() {
     // using private fields, we can create a getter method that returns the value of the private field.
     return this.#members;
   }
