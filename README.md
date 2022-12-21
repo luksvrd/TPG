@@ -1,6 +1,7 @@
 # (TPG) Team Profile Generator
 
 https://github.com/luksvrd/TPG
+![Team Profile Generated](https://github.com/luksvrd/TPG/blob/main/src/TPG.png)
 
 ## License
 
