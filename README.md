@@ -37,7 +37,7 @@ The following necessary dependencies must be installed to run the application pr
 
 ## Usage
 
-Once you `cd` into the repo, the application will be invoked by using the following command: `node src/index.js`. Answer the prompts about your team and your static HTML page will be generated at the end. Link to Application Walkthrough Video:
+Once you `cd` into the repo, the application will be invoked by using the following command: `node src/index.js`. Answer the prompts about your team and your static HTML page will be generated at the end. Link to Application Walkthrough Video: (https://youtu.be/D6IKXb9rmXU)
 
 ## Questions
 
