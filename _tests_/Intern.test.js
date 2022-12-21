@@ -1,40 +1,59 @@
-// import { describe, expect, it } from "vitest";
-// import Intern from "../src/models/Intern";
+import { describe, expect, it } from "vitest";
+import Intern from "../src/models/Intern";
 
-// describe("Intern", () => {
-//   it("should create an object with name, id, email, and school properties", () => {
-//     const intern = new Intern("John Doe", 1, "doe@gmail.com", "UCLA");
+describe("Intern", () => {
+  it("should return the intern's name", () => {
+    const intern = new Intern({
+      name: "John Doe",
+      id: 1,
+      email: "doe@gmail.com",
+      school: "UCLA",
+    });
 
-//     expect(intern).toEqual("John Doe", 1, "doe@gmail.com", "UCLA");
-//   });
+    expect(intern.name).toBe("John Doe");
+  });
 
-//   it("should return the intern's name", () => {
-//     const intern = new Intern("John Doe", 1, "doe@gmail.com", "UCLA");
+  it("should return the intern's id", () => {
+    const intern = new Intern({
+      name: "John Doe",
+      id: 1,
+      email: "doe@gmail.com",
+      school: "UCLA",
+    });
 
-//     expect(intern.name).toBe("John Doe");
-//   });
+    expect(intern.id).toBe(1);
+  });
 
-//   it("should return the intern's id", () => {
-//     const intern = new Intern("John Doe", 1, "doe@gmail.com", "UCLA");
+  it("should return the intern's email", () => {
+    const intern = new Intern({
+      name: "John Doe",
+      id: 1,
+      email: "doe@gmail.com",
+      school: "UCLA",
+    });
 
-//     expect(intern.id).toBe(1);
-//   });
+    expect(intern.email).toBe("doe@gmail.com");
+  });
 
-//   it("should return the intern's email", () => {
-//     const intern = new Intern("John Doe", 1, "doe@gmail.com", "UCLA");
+  it("should return the intern's school", () => {
+    const intern = new Intern({
+      name: "John Doe",
+      id: 1,
+      email: "doe@gmail.com",
+      school: "UCLA",
+    });
 
-//     expect(intern.email).toBe("doe@gmail.com");
-//   });
+    expect(intern.school).toBe("UCLA");
+  });
 
-//   it("should return the intern's school", () => {
-//     const intern = new Intern("John Doe", 1, "doe@gmail.com", "UCLA");
+  it("should return the intern's role", () => {
+    const intern = new Intern({
+      name: "John Doe",
+      id: 1,
+      email: "doe@gmail.com",
+      school: "UCLA",
+    });
 
-//     expect(intern.school).toBe("UCLA");
-//   });
-
-//   it("should return the intern's role", () => {
-//     const intern = new Intern("John Doe", 1, "doe@gmail.com", "UCLA");
-
-//     expect(intern.getRole()).toBe("Intern");
-//   });
-// });
+    expect(intern.getRole()).toBe("Intern");
+  });
+});
